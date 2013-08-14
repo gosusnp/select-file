@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body ng-app="FileSelect">
+    <div ng-controller="FileSelectCtrl">
+        <a id="test" href="#" select-file="files">select single file</a>
+        <table ng-if="files.length">
+            <tr><th>name</th><th>size</th><th>type</th></tr>
+            <tr ng-repeat="file in files">
+                <td ng-bind="file.name"></td>
+                <td ng-bind="file.size"></td>
+                <td ng-bind="file.type"></td>
+            </tr>
+        </table>
+    </div>
+    <hr />
+    <div ng-controller="FileSelectCtrl">
+        <a id="test" href="#" select-files="files">select multiple files</a>
+        <table ng-if="files.length">
+            <tr><th>name</th><th>size</th><th>type</th></tr>
+            <tr ng-repeat="file in files">
+                <td ng-bind="file.name"></td>
+                <td ng-bind="file.size"></td>
+                <td ng-bind="file.type"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="/src/select-file.js"></script>
+
+<script type="text/javascript">
+    angular.module("FileSelect", ['select-file'])
+        .controller("FileSelectCtrl", function($scope) {
+        });
+</script>
+
+</body>
+</html>

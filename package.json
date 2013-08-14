@@ -1,0 +1,23 @@
+{
+  "name": "select-file",
+  "description": "Directive for file-selection",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gosusnp/select-file",
+  "author": {
+    "name": "snp",
+    "url": "https://github.com/gosusnp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gosusnp/select-file.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gosusnp/select-file/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
