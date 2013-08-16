@@ -4,7 +4,7 @@
 </head>
 <body ng-app="FileSelect">
     <div ng-controller="FileSelectCtrl">
-        <a id="test" href="#" select-file="files">select single file</a>
+        <a id="test" href="#" select-file="files" select-file-accept="text/*">select single file</a>
         <table ng-if="files.length">
             <tr><th>name</th><th>size</th><th>type</th></tr>
             <tr ng-repeat="file in files">
@@ -16,7 +16,7 @@
     </div>
     <hr />
     <div ng-controller="FileSelectCtrl">
-        <a id="test" href="#" select-files="files">select multiple files</a>
+        <a id="test" href="#" select-file="files" select-file-multiple>select multiple files</a>
         <table ng-if="files.length">
             <tr><th>name</th><th>size</th><th>type</th></tr>
             <tr ng-repeat="file in files">

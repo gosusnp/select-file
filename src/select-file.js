@@ -23,6 +23,13 @@
                 }).click();
             });
     }];
+    var selectFileCompile = function(tElement, tAttrs) {
+        var inputNode = tElement.find("input[type='file']:first");
+        if (tAttrs.selectFileAccept)
+            inputNode.attr("accept", tAttrs.selectFileAccept);
+        if (tAttrs.hasOwnProperty('selectFileMultiple'))
+            inputNode.attr("multiple", true);
+    };
 
     angular.module('select-file', [])
         .directive('selectFile', function() {
@@ -31,14 +38,7 @@
                 transclude: true,
                 restrict: 'A',
                 controller: selectFileCtrl,
-            };
-        })
-        .directive('selectFiles', function() {
-            return {
-                template: '<input type="file" ng-hide="true" multiple/><span ng-transclude></span>',
-                transclude: true,
-                restrict: 'A',
-                controller: selectFileCtrl,
+                compile: selectFileCompile,
             };
         });
 })();
